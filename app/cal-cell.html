@@ -1,0 +1,22 @@
+<div>
+<!--    <h4>Hello {{ currentDate }}</h4>
+    <h5>lIST=<BR/>{{dateList}}</h5>-->
+<!--{{currentSelection}}-->
+<div class="row" ng-repeat="item in dataList track by $index">
+    <!--{{ $index}} &#45;&#45; {{ item }}-->
+    <div class="col-md-2"></div>
+    <div class="cell col-md-1"
+         ng-class="
+                    {noncurrent:cell.month!==currentSelection.currMonth,
+                     weekend:(cell.month===currentSelection.currMonth)&&
+                             (cell.weekday===false)}"
+         ng-repeat="cell in item track by $index">
+        {{ cell.day }}
+    </div>
+    <div class="col-md-1"></div>
+</div>
+</div>
+
+<!-- -{{ cell.month }}-{{ currentSelection.currMonth }}-->
+<!-- -{{ getBType(currentSelection.currMonth) }}-{{ getBType(cell.month) }}-{{ cell.weekday }}-{{cell.month!==currentSelection.currMonth}}-{{(cell.month===currentSelection.currMonth)&&-->
+<!--(cell.weekday===false)}}-->

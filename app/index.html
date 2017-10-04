@@ -1,15 +1,45 @@
 <!DOCTYPE html>
-<html ng-app="calendarDemoApp">
+<html ng-app="calendarApp">
 <head>
 <title>Calendar Directive Challenge</title>
 <link rel="stylesheet" type="text/css" href="./main.css" />
-</head>
-<body>
+<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
+</head>
+<body ng-controller="calController">
+ <!--{{dateObj}}-{{getType(dateObj.currMonth)}}-{{getType(dateObj.currYear)}}-->
+<nav class = "navbar navbar-default" role = "navigation">
+   <!--  <div ng-repeat="month in months track by $index">
+        {{month}}
+        <span ng-if="$index===dateObj.currMonth">selected</span>
+    </div> -->
+    <div class = "navbar-header">
+
+        Month: <select ng-model="dateObj.currMonth">
+                    <option
+                            ng-repeat="month in months track by $index"
+                            ng-selected="$index===dateObj.currMonth"
+                            value="{{$index}}">{{ month }}
+                    </option>
+                </select>
+        Year: <select ng-model="dateObj.currYear">
+                    <option
+                            ng-repeat="year in years"
+                            ng-selected="year===dateObj.currYear"
+                            value="{{year}}">{{ year }}
+                    </option>
+                </select>
+    </div>
+</nav>
+<hr/>
+<!-- {{currDate}} -->
+<calendar-disp current-date="currDate" current-selection="dateObj">
+
+</calendar-disp>
 <!-- your code for nav and calendar directive instance here -->
 
-<script type="text/javascript" src="./bower_components/angular/angular.js"></script>
-<script type="text/javascript" src="./utilities/calendar-range/calendarRange.js"></script>
-<script type="text/javascript" src="./app.js"></script>
+    <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="./utilities/calendar-range/calendarRange.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
 </body>
 </html>

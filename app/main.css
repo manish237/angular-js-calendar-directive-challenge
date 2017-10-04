@@ -1,1 +1,32 @@
 /* your css code goes here */
+.navbar{
+    background-color: black;
+    color: white;
+    padding-top: 1em;
+}
+.noncurrent{
+    background-color: gray;
+}
+.weekend{
+    color: red;
+}
+.row{
+    /*border: 1px dashed red;*/
+
+    border-collapse: collapse;
+}
+.cell{
+    height: 8em;
+    /*width: 8em;*/
+    border: 0.1px solid black;
+    font-size: 1em;
+    padding-top: .5em;
+    /*padding-left: 1em;*/
+    border-collapse: collapse;
+    font-weight: bold;
+
+
+
+    /*border: solid 1px black;*/
+
+}
